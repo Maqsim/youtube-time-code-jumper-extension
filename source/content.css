@@ -1,0 +1,31 @@
+.ytp-back-to-comment-button {
+	color: #fff;
+	padding: 10px;
+	opacity: 90%;
+	position: absolute;
+	bottom: 62px;
+	top: auto;
+	font-size: 109% !important;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.ytp-back-to-comment-button:hover {
+	opacity: 100%;
+}
+
+ytd-comment-renderer {
+	transition: background-color 1s ease;
+}
+
+ytd-comment-renderer.highlight {
+	background-color: #e8ecf4;
+}
+
+html[dark] ytd-comment-renderer.highlight {
+	background-color: #272924;
+}
+
+.ytp-big-mode .ytp-back-to-comment-button {
+	bottom: 70px;
+}
