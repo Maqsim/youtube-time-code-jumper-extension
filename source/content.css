@@ -26,6 +26,10 @@ html[dark] ytd-comment-renderer.highlight {
 	background-color: #272924;
 }
 
+.ytp-big-mode .ytp-back-to-comment-button.is-safari {
+  opacity: 0;
+}
+
 .ytp-big-mode .ytp-back-to-comment-button {
 	bottom: 70px;
 }

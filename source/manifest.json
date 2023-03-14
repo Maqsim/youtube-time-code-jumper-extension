@@ -1,7 +1,7 @@
 {
-  "name": "YouTube Time Code Jumper",
+  "name": "Time Code Jumper for YouTube",
   "version": "1.0.0",
-  "description": "Jump back to a comment which you clicked a time code from",
+  "description": "This is extension for YouTube lets you scroll back to a comment which you clicked a time code from.",
   "homepage_url": "https://maxdiachenko.com/youtube-time-code-jumper-extension",
   "manifest_version": 3,
   "minimum_chrome_version": "100",
@@ -14,9 +14,6 @@
   "icons": {
 	"128": "icon.png"
   },
-  "host_permissions": [
-	"https://www.youtube.com/*"
-  ],
   "content_scripts": [
 	{
 	  "matches": [
