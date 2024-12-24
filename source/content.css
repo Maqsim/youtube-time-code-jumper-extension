@@ -1,7 +1,7 @@
 .ytp-back-to-comment-button {
   opacity: 90%;
   position: absolute;
-  bottom: 62px;
+  bottom: 65px;
   top: auto;
   font-size: 111% !important;
   left: 50%;
@@ -12,15 +12,15 @@
   opacity: 100%;
 }
 
-ytd-comment-renderer {
+#body.ytd-comment-view-model {
   transition: background-color 1s ease;
 }
 
-ytd-comment-renderer.highlight {
+#body.ytd-comment-view-model.highlight {
   background-color: #e8ecf4;
 }
 
-html[dark] ytd-comment-renderer.highlight {
+html[dark] #body.ytd-comment-view-model.highlight {
   background-color: #272924;
 }
 

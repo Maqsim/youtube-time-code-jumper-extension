@@ -1,5 +1,4 @@
 (async () => {
-  console.log('init');
   let videoPlayerEl; // YouTube player element
   let controlsEl; // Player controls area element
   let lastScrollPosition;
@@ -73,18 +72,18 @@
   document.addEventListener('mouseup', (e) => {
     const target = e.target;
 
+    const isTimeCode = Boolean(target.getAttribute('href')?.split('t=')[1]);
+
     // Clicking time code link...
-    if (target.tagName === 'A' && target.classList.contains('yt-simple-endpoint') && target.hasAttribute('href')) {
-      // Check if link has time code
-      const isTimeCode = Boolean(target.getAttribute('href')?.split('t=')[1]);
-      if (isTimeCode) {
-        ignoreSeekingCallback = true;
-        backToCommentButton.hidden = false;
-        lastScrollPosition = getScrollPosition();
-        lastCommentEl = target.closest('ytd-comment-renderer');
-        backToCommentButton.title = `Back to comment "${ lastCommentEl.querySelector('#content-text').textContent }"`;
-        wasPaused = videoPlayerEl.paused;
-      }
+    if (target.tagName === 'A' && target.hasAttribute('href') && isTimeCode) {
+      ignoreSeekingCallback = true;
+      backToCommentButton.hidden = false;
+      lastScrollPosition = getScrollPosition();
+      lastCommentEl = target.closest('#body.ytd-comment-view-model');
+      console.log(lastCommentEl);
+      backToCommentButton.title = `Back to comment "${ lastCommentEl.querySelector('#content-text').textContent }"`;
+      wasPaused = videoPlayerEl.paused;
+      getScrollable().scrollTo(0, 0);
     }
 
     // Clicking ad skip button...
